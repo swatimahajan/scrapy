@@ -15,19 +15,19 @@ class GiftSpider(scrapy.Spider):
             "http://www.gifts.com/birthday/woman/NwxyuP?navContent=T%3aBirthday%3a%26nbsp%3b%26nbsp%3bWomen&navLocation=T%3a1-5%3a3-13&productgroup=glpfbir",
             "https://www.gifts.com/birthday/child/NwxhwX?navContent=T%3aBirthday%3a%26nbsp%3b%26nbsp%3bKids&navLocation=T%3a1-5%3a4-13&productgroup=gbirhnr"
         ]
+#def parse(self, response):
+	#filename = response.url.split("/")[-2] + '.html'
+	#with open(filename, 'wb') as f:
+		#f.write(response.body)'''
 def parse(self, response):
-	filename = response.url.split("/")[-2] + '.html'
-	with open(filename, 'wb') as f:
-		f.write(response.body)
+    with open('newfile','wb') as f:
+        x = response.xpath("//a/img").extract()
+        for i in x:
+            y = i.encode("utf8")
+        			#f.write(str(i)
+            f.write(y.split()[1][9:-8])
+            print "\n"
 
-
- 	with open('outputfile','wb') as f:
- 		print "hello"
- 		for i in response.xpath("//img"):
- 			print "message"
- 			f.write(str(i))
- 			print "\n"
-
-print "hiiii"
+#print "hiiii"
             	
 	    
