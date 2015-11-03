@@ -32,5 +32,19 @@ class GiftSpider(scrapy.Spider):
 #	 			print "\n"
 #
 #		print "hiiii"
+#def parse(self, response):
+	#filename = response.url.split("/")[-2] + '.html'
+	#with open(filename, 'wb') as f:
+		#f.write(response.body)'''
+def parse(self, response):
+    with open('newfile','wb') as f:
+        x = response.xpath("//a/img").extract()
+        for i in x:
+            y = i.encode("utf8")
+        			#f.write(str(i)
+            f.write(y.split()[1][9:-8])
+            print "\n"
+
+#print "hiiii"
             	
 	    
