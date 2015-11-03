@@ -1,0 +1,8 @@
+class Test():
+	a = 1
+	def test(self):
+		print "hiii testing"
+
+
+t = Test()
+t.test()
